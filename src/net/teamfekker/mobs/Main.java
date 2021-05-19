@@ -17,16 +17,16 @@ public class Main extends JavaPlugin {
 	public void onEnable() {
 		plugin = this;
 		//config things
-    	config.addDefault("zombieHealth", 35);
-    	config.addDefault("skeletonHealth", 35);
-    	config.addDefault("spiderHealth", 35);
-    	config.addDefault("huskHealth", 35);
-    	config.addDefault("drownedHealth", 35);
-    	config.addDefault("zombieDmg", 8);
-    	config.addDefault("spiderDmg", 6);
-    	config.addDefault("huskDmg", 8);
-    	config.addDefault("downedDmg", 10);
-    	config.addDefault("endermanDmg", 15);
+    		config.addDefault("zombieHealth", 35.0);
+    		config.addDefault("skeletonHealth", 35.0);
+    		config.addDefault("spiderHealth", 35.0);
+    		config.addDefault("huskHealth", 35.0);
+    		config.addDefault("drownedHealth", 35.0);
+    		config.addDefault("zombieDmg", 8.0);
+    		config.addDefault("spiderDmg", 6.0);
+    		config.addDefault("huskDmg", 8.0);
+    		config.addDefault("downedDmg", 10.0);
+   	 	config.addDefault("endermanDmg", 15.0);
 		config.options().copyDefaults(true);
 		saveConfig();
 		
