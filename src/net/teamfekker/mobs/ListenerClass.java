@@ -1,65 +1,46 @@
 package net.teamfekker.mobs;
 
-import org.bukkit.Server;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.EntityType;
-import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.CreatureSpawnEvent;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 
-import net.teamfekker.mobs.Main;
-
-public class ListenerClass implements Listener {
-
-    private FileConfiguration config;
-    private Main plugin;
-	public ListenerClass(Main plugin) {
-		this.plugin = plugin;
-		this.config = plugin.getConfig();
-	}
-	
-	//pulling variables from config
-	double zombieHealth = config.getDouble("zombieHealth");
-	double skeletonHealth = config.getDouble("skeletonHealth");
-	double spiderHealth = config.getDouble("spiderHealth");
-	double huskHealth = config.getDouble("huskHealth");
-	double drownedHealth = config.getDouble("drownedHealth");
-	double zombieDmg = config.getDouble("zombieDmg");
-	double spiderDmg = config.getDouble("spiderDmg");
-	double huskDmg = config.getDouble("huskDmg");
-	double drownedDmg = config.getDouble("drownedDmg");
-	double endermanDmg = config.getDouble("endermanDmg");
-	
+public class ListenerClass implements Listener{
 
 	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void onSpawn(CreatureSpawnEvent event) {
+		double zombieHealth = Main.plugin.getConfig().getDouble("zombieHealth");
+		double skeletonHealth = Main.plugin.getConfig().getDouble("skeletonHealth");
+		double spiderHealth = Main.plugin.getConfig().getDouble("spiderHealth");
+		double huskHealth = Main.plugin.getConfig().getDouble("huskHealth");
+		double drownedHealth = Main.plugin.getConfig().getDouble("drownedHealth");
+
 		if (event.getEntity().getType().equals(EntityType.ZOMBIE)) {
 			event.getEntity().setMaxHealth(zombieHealth);
 			event.getEntity().setHealth(zombieHealth);
 		}
 		if (event.getEntity().getType().equals(EntityType.SKELETON)) {
-			event.getEntity().setMaxHealth(skeletonHealth);
-			event.getEntity().setHealth(skeletonHealth);
+			event.getEntity().setMaxHealth(35);
+			event.getEntity().setHealth(35);
 		}
 		if (event.getEntity().getType().equals(EntityType.SPIDER)) {
-			event.getEntity().setMaxHealth(spiderHealth);
-			event.getEntity().setHealth(spiderHealth);
+			event.getEntity().setMaxHealth(35);
+			event.getEntity().setHealth(35);
 		}
 		if (event.getEntity().getType().equals(EntityType.CAVE_SPIDER)) {
-			event.getEntity().setMaxHealth(spiderHealth);
-			event.getEntity().setHealth(spiderHealth);
+			event.getEntity().setMaxHealth(35);
+			event.getEntity().setHealth(35);
 		}
 		if (event.getEntity().getType().equals(EntityType.HUSK)) {
-			event.getEntity().setMaxHealth(huskHealth);
-			event.getEntity().setHealth(huskHealth);
+			event.getEntity().setMaxHealth(35);
+			event.getEntity().setHealth(35);
 		}
 		if (event.getEntity().getType().equals(EntityType.DROWNED)) {
-			event.getEntity().setMaxHealth(drownedHealth);
-			event.getEntity().setHealth(drownedHealth);
+			event.getEntity().setMaxHealth(35);
+			event.getEntity().setHealth(35);
 		}
 		else {
 			event.setCancelled(false);
@@ -70,23 +51,29 @@ public class ListenerClass implements Listener {
 	
 	@EventHandler
 	public void entityDamageEvent(EntityDamageByEntityEvent event) {
+		double zombieDmg = Main.plugin.getConfig().getDouble("zombieDmg");
+		double spiderDmg = Main.plugin.getConfig().getDouble("spiderDmg");
+		double huskDmg = Main.plugin.getConfig().getDouble("huskDmg");
+		double drownedDmg = Main.plugin.getConfig().getDouble("drownedDmg");
+		double endermanDmg = Main.plugin.getConfig().getDouble("endermanDmg");
+		
 		if(event.getDamager().getType().equals(EntityType.ZOMBIE)) {
-			event.setDamage(zombieDmg);
+			event.setDamage(8);
 		}
 		if(event.getDamager().getType().equals(EntityType.SPIDER)) {
-			event.setDamage(spiderDmg);
+			event.setDamage(6);
 		}
 		if(event.getDamager().getType().equals(EntityType.CAVE_SPIDER)) {
-			event.setDamage(spiderDmg);
+			event.setDamage(6);
 		}
 		if(event.getDamager().getType().equals(EntityType.DROWNED)) {
-			event.setDamage(drownedDmg);
+			event.setDamage(8);
 		}
 		if(event.getDamager().getType().equals(EntityType.HUSK)) {
-			event.setDamage(huskDmg);
+			event.setDamage(10);
 		}
 		if(event.getDamager().getType().equals(EntityType.ENDERMAN)) {
-			event.setDamage(endermanDmg);
+			event.setDamage(14);
 		}
 		if(event.getDamager() instanceof Player) {
 			event.setCancelled(false);
