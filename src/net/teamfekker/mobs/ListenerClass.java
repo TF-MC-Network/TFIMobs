@@ -23,24 +23,24 @@ public class ListenerClass implements Listener{
 			event.getEntity().setHealth(zombieHealth);
 		}
 		if (event.getEntity().getType().equals(EntityType.SKELETON)) {
-			event.getEntity().setMaxHealth(35);
-			event.getEntity().setHealth(35);
+			event.getEntity().setMaxHealth(skeletonHealth);
+			event.getEntity().setHealth(skeletonHealth);
 		}
 		if (event.getEntity().getType().equals(EntityType.SPIDER)) {
-			event.getEntity().setMaxHealth(35);
-			event.getEntity().setHealth(35);
+			event.getEntity().setMaxHealth(spiderHealth);
+			event.getEntity().setHealth(spiderHealth);
 		}
 		if (event.getEntity().getType().equals(EntityType.CAVE_SPIDER)) {
-			event.getEntity().setMaxHealth(35);
-			event.getEntity().setHealth(35);
+			event.getEntity().setMaxHealth(spiderHealth);
+			event.getEntity().setHealth(spiderHealth);
 		}
 		if (event.getEntity().getType().equals(EntityType.HUSK)) {
-			event.getEntity().setMaxHealth(35);
-			event.getEntity().setHealth(35);
+			event.getEntity().setMaxHealth(huskHealth);
+			event.getEntity().setHealth(huskHealth);
 		}
 		if (event.getEntity().getType().equals(EntityType.DROWNED)) {
-			event.getEntity().setMaxHealth(35);
-			event.getEntity().setHealth(35);
+			event.getEntity().setMaxHealth(drownedHealth);
+			event.getEntity().setHealth(drownedHealth);
 		}
 		else {
 			event.setCancelled(false);
@@ -58,22 +58,22 @@ public class ListenerClass implements Listener{
 		double endermanDmg = Main.plugin.getConfig().getDouble("endermanDmg");
 		
 		if(event.getDamager().getType().equals(EntityType.ZOMBIE)) {
-			event.setDamage(8);
+			event.setDamage(zombieDmg);
 		}
 		if(event.getDamager().getType().equals(EntityType.SPIDER)) {
-			event.setDamage(6);
+			event.setDamage(spiderDmg);
 		}
 		if(event.getDamager().getType().equals(EntityType.CAVE_SPIDER)) {
-			event.setDamage(6);
+			event.setDamage(spiderDmg);
 		}
 		if(event.getDamager().getType().equals(EntityType.DROWNED)) {
-			event.setDamage(8);
+			event.setDamage(drownedDmg);
 		}
 		if(event.getDamager().getType().equals(EntityType.HUSK)) {
-			event.setDamage(10);
+			event.setDamage(huskDmg);
 		}
 		if(event.getDamager().getType().equals(EntityType.ENDERMAN)) {
-			event.setDamage(14);
+			event.setDamage(endermanDmg);
 		}
 		if(event.getDamager() instanceof Player) {
 			event.setCancelled(false);
