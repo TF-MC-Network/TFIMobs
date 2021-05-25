@@ -26,6 +26,6 @@ public class Main extends JavaPlugin {
 		saveConfig();
 		
 		Bukkit.getPluginManager().registerEvents(new ListenerClass(), this);
-	//	Bukkit.getPluginCommand("tfmobs").setExecutor(new net.teamfekker.mobs.ReloadCommand(this));
+		Bukkit.getPluginCommand("tfmobs").setExecutor(new net.teamfekker.mobs.ReloadCommand());
 	}
 }
