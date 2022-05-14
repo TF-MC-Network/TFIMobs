@@ -1,6 +1,7 @@
 main: net.teamfekker.mobs.Main
 name: TFMobs
 version: 0.2.0
+api-version: 1.16
 description: TF MC Mobs plugin for kSMP
 author: BearTrafalgar
 website: www.teamfekker.net
@@ -10,3 +11,7 @@ commands:
   description: Allows the purging of all online players.
   permission: tfmobs.reload
   usage: /tfmobs reload
+ bossspawn:
+  description: Spawns bosses
+  permission: tfmobs.boss
+  usage: /bossspawn
