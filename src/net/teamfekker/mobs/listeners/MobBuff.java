@@ -93,6 +93,12 @@ public class MobBuff implements Listener{
 		if(event.getDamager().getType().equals(EntityType.ZOMBIE)) {
 			event.setDamage(zombieDmg);
 		}
+		if(event.getDamager().getName().equals("§cBoss Mob")) {
+			event.setDamage(20);
+		}
+		if(event.getDamager().getName().equals("Boss Mob")) {
+			event.setDamage(20);
+		}
 		if(event.getDamager().getType().equals(EntityType.SPIDER)) {
 			event.setDamage(spiderDmg);
 		}
